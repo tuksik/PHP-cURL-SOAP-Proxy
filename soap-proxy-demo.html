@@ -38,6 +38,8 @@
                                   'Content-length: ' + soapRequest.length,
                                   'SoapAction: http://services.votervoice.net/advocacyws/GetDistricts'];
 
+                // make our POST request to the proxy
+                // your request will look similar, but you will need to set up how it should behave when you get data back/have an error 
                 $.ajax({
                     url: submitUrl,
                     type: "POST",
