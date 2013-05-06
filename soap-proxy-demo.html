@@ -31,12 +31,12 @@
                 // 1. set up our soap request
                 // 2. set up our soap request headers
                 // 3. set up the end point of our soap request
-                var soapRequest = '<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><GetDistricts xmlns="http://services.votervoice.net/advocacyws/"><strEncryptedAuthKey>KEYNEEDEDHERE</strEncryptedAuthKey><inAddr><Zip>' + zip5 + '</Zip><ZipExt>' + zipPlus4 + '</ZipExt></inAddr></GetDistricts></soap:Body></soap:Envelope>',
-                    soapEndPoint = 'http://services.votervoice.net/AdvocacyWS/Directory.asmx',
-                    soapHeader = ['Host: services.votervoice.net',
+                var soapRequest = '<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><GetDistricts xmlns="http://api.example.com/endpoint/"><strEncryptedAuthKey>KEYNEEDEDHERE</strEncryptedAuthKey><inAddr><Zip>' + zip5 + '</Zip><ZipExt>' + zipPlus4 + '</ZipExt></inAddr></GetDistricts></soap:Body></soap:Envelope>',
+                    soapEndPoint = 'http://api.example.com/endpoint/',
+                    soapHeader = ['Host: api.example.com',
                                   'Content-type: text/xml; charset=utf-8',
                                   'Content-length: ' + soapRequest.length,
-                                  'SoapAction: http://services.votervoice.net/advocacyws/GetDistricts'];
+                                  'SoapAction: http://api.example.com/endpoint/action'];
 
                 // make our POST request to the proxy
                 // your request will look similar, but you will need to set up how it should behave when you get data back/have an error 
